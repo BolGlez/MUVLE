@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+  
+  <!-- Prototipo de VR para MUVLE -->
+  
+  <head>
+    ...
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-babia-components/dist/aframe-babia-components.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene fog="type: exponential; color: #ffffff; density: 0.02; near: 0; far: 30">
+      <!-- Environment -->
+
+      <a-sky src="https://cdn.glitch.global/6129616c-d685-405f-9e5a-3869316b8be0/entorno_universidad0001.jpg?v=1655202508267" rotation="0 0 0"></a-sky>
+  
+      <!-- Camera -->
+      <a-entity movement-controls="fly: false" position="0 0 0">
+        <a-entity camera position="0 1.6 0" look-controls></a-entity>
+        <a-entity cursor="rayOrigin:mouse"></a-entity>
+        <a-entity laser-controls="hand: right"></a-entity>
+      </a-entity>
+
+      <!-- Reference sphere
+       <a-sphere position="0 0 0" radius="0.1" color="#EF2D5E"></a-sphere>
+        -->
+      
+      <!--Puntos de Referencia de los Items-->
+      
+       <a-sphere position="0 0 0" radius="0.5" color="#EE0000"></a-sphere>
+      
+
+      
+
+      
+ 
+
+
+      
+<!-- Floor -->
+      <a-box src="https://raw.githubusercontent.com/oluisjuan/LongCovid-Pilot/master/material/floor-texture.jpg" depth="5" height="0.1" width="5" position="0 0 0"></a-box>
+      
+      <!-- Floor -->
+      <a-box src="https://raw.githubusercontent.com/oluisjuan/LongCovid-Pilot/master/material/floor-texture.jpg" depth="40" height="0.1" width="40" position="0 -0.2 0"></a-box>
+      
+      
+      
+      <!--Los Burgueses de Calais Rodin-->
+      
+      <a-assets>
+        <a-asset-item id="burguescalais" src="https://cdn.glitch.me/5cd52e5d-a733-4718-b823-dfe7a6f1a9c9/auguste_rodin_die_burger_von_calais_188486.glb?v=1676399893625"></a-asset-item>
+      </a-assets>
+   
+       
+      <a-entity gltf-model="#burguescalais" scale="0.001 0.001 0.001" position="2 1 2" rotation="0 0 0" animation-mixer></a-entity>
+      
+      
+      
+     
+      <!--Iglesia Nousaien -->
+      
+      <a-assets>
+        <a-asset-item id="church01010" src="https://cdn.glitch.me/0431c0fb-338f-4d13-ad2f-efcf5ec20653/Ola.obj?v=1714422390235"></a-asset-item>
+      </a-assets>
+   
+
+      <a-entity obj-model="obj: #church01010" scale="0.3 0.3 0.3" position="0 0 0" rotation="0 0 0" animation-mixer></a-entity>
+      
+      
+      <!--Cross Falling 
+      
+      <a-assets>
+        <a-asset-item id="cross01010" src="https://cdn.glitch.global/8e8beb79-81de-401a-8591-38fa0f92dbb9/wooden_cross.glb?v=1679657571943"></a-asset-item>
+      </a-assets>
+   
+
+      <a-entity gltf-model="#cross01010" scale="0.4 0.4 0.4" position="0 1.5 -4.5" rotation="0 0 0" animation-mixer animation="property: rotation; to: 90 0 0; loop: false; dur: 2000; delay: 10000;"></a-entity>
+          
+
+
+       <!--Musica Drum$Bass by Jose&Arkaitz-->
+      
+      
+  <a-sound src="https://cdn.glitch.global/5cd52e5d-a733-4718-b823-dfe7a6f1a9c9/2%20-%20Doser.mp3?v=1673975078456" autoplay="false" position="0 0 0" loop="true"></a-sound>
+
+      
+      <a-sound
+        src="https://cdn.glitch.global/8e8beb79-81de-401a-8591-38fa0f92dbb9/campanadas001.mp3?v=1679660295429"
+        autoplay="false"
+        position="0 0 0"
+        loop="false"
+        volume= "1"
+      ></a-sound>
+
+
+
+
+<!--Campanadas 
+      
+      <a-sound
+        src="https://cdn.glitch.global/8e8beb79-81de-401a-8591-38fa0f92dbb9/eldiadelabestiamusicaexport.mp3?v=1679661350843"
+        autoplay="true"
+        position="0 0 0"
+        loop="false"
+        volume="2"
+      ></a-sound>
+      
+-->
+      
+      
+    </a-scene>
+  </body>
+
+</html>
+
