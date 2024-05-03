@@ -1,120 +1,181 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
+<!-- Prototipo de VR para MUVLE -->
 
-  
-  <!-- Prototipo de VR para MUVLE -->
-  
+<html lang="en">
   <head>
-    ...
+    <!-- Bibliotecas -->
+
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-babia-components/dist/aframe-babia-components.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="./script.js"></script>
   </head>
 
   <body>
-    <a-scene fog="type: exponential; color: #ffffff; density: 0.02; near: 0; far: 30">
-      <!-- Environment -->
+    <a-scene
+      fog="type: exponential; color: #ffffff; density: 0.005; near: 0; far: 30"
+    >
+      <!-- Entorno -->
 
-      <a-sky src="https://cdn.glitch.global/6129616c-d685-405f-9e5a-3869316b8be0/entorno_universidad0001.jpg?v=1655202508267" rotation="0 0 0"></a-sky>
-  
-      <!-- Camera -->
+      <a-sky
+        src="https://cdn.glitch.global/6129616c-d685-405f-9e5a-3869316b8be0/entorno_universidad0001.jpg?v=1655202508267"
+        rotation="0 0 0"
+      ></a-sky>
+
+      <!-- Iluminación -->
+      
+      <a-light type="ambient" intensity="0.5"color="white"></a-light>
+      <a-light type="point" intensity="1" color="white" position="21.354 3.422 0"></a-light>
+    
+      <!-- Cámara -->
+
       <a-entity movement-controls="fly: false" position="0 0 0">
         <a-entity camera position="0 1.6 0" look-controls></a-entity>
         <a-entity cursor="rayOrigin:mouse"></a-entity>
         <a-entity laser-controls="hand: right"></a-entity>
       </a-entity>
 
-      <!-- Reference sphere
-       <a-sphere position="0 0 0" radius="0.1" color="#EF2D5E"></a-sphere>
-        -->
-      
-      <!--Puntos de Referencia de los Items-->
-      
-       <a-sphere position="0 0 0" radius="0.5" color="#EE0000"></a-sphere>
-      
+      <!-- Gráfico de información y dimensiones -->
 
-      
-
-      
- 
-
-
-      
-<!-- Floor -->
-      <a-box src="https://raw.githubusercontent.com/oluisjuan/LongCovid-Pilot/master/material/floor-texture.jpg" depth="5" height="0.1" width="5" position="0 0 0"></a-box>
-      
-      <!-- Floor -->
-      <a-box src="https://raw.githubusercontent.com/oluisjuan/LongCovid-Pilot/master/material/floor-texture.jpg" depth="40" height="0.1" width="40" position="0 -0.2 0"></a-box>
-      
-      
-      
-      <!--Los Burgueses de Calais Rodin-->
-      
       <a-assets>
-        <a-asset-item id="burguescalais" src="https://cdn.glitch.me/5cd52e5d-a733-4718-b823-dfe7a6f1a9c9/auguste_rodin_die_burger_von_calais_188486.glb?v=1676399893625"></a-asset-item>
+        <img
+          id="ptoinfo"
+          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/info.png?v=1714662611995"
+          crossorigin="anonymous" 
+        /> 
+        <a-mixin id="info" geometry="height: 2; width: 2"></a-mixin> <!-- a-mixin lo utilizamos para almacenar propiedades en la entidad "info" y poder asignarlas a los diferentes puntos de información añadiendo únicamente "mixin=info" -->
       </a-assets>
-   
-       
-      <a-entity gltf-model="#burguescalais" scale="0.001 0.001 0.001" position="2 1 2" rotation="0 0 0" animation-mixer></a-entity>
-      
-      
-      
-     
-      <!--Iglesia Nousaien -->
-      
-      <a-assets>
-        <a-asset-item id="church01010" src="https://cdn.glitch.me/0431c0fb-338f-4d13-ad2f-efcf5ec20653/Ola.obj?v=1714422390235"></a-asset-item>
-      </a-assets>
-   
 
-      <a-entity obj-model="obj: #church01010" scale="0.3 0.3 0.3" position="0 0 0" rotation="0 0 0" animation-mixer></a-entity>
-      
-      
-      <!--Cross Falling 
-      
-      <a-assets>
-        <a-asset-item id="cross01010" src="https://cdn.glitch.global/8e8beb79-81de-401a-8591-38fa0f92dbb9/wooden_cross.glb?v=1679657571943"></a-asset-item>
-      </a-assets>
-   
+      <!-- Punto de origen -->
 
-      <a-entity gltf-model="#cross01010" scale="0.4 0.4 0.4" position="0 1.5 -4.5" rotation="0 0 0" animation-mixer animation="property: rotation; to: 90 0 0; loop: false; dur: 2000; delay: 10000;"></a-entity>
+      <a-sphere position="0 0 0" radius="0.5" color="#EE0000"></a-sphere>
+
+      <!-- Suelo -->
+      
+      <a-box
+        src="https://raw.githubusercontent.com/oluisjuan/LongCovid-Pilot/master/material/floor-texture.jpg"
+        depth="5"
+        height="0.1"
+        width="5"
+        position="0 0 0"
+      ></a-box>
+
+       <!-- 1. Sala de exposición: modelo GLB -->
+
+      <a-assets>
+        <a-asset-item
+          id="museomuvle"
+          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Museo_1.glb?v=1714660105318"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-entity
+        gltf-model="#museomuvle"
+        scale="1.5 1.5 1.5"
+        position="21.988 0 -9.978"
+        rotation="0 180 0"
+      ></a-entity>
+      
+      <!-- 2. Estatua: modelo GLB e imagen del panel informativo -->
+
+      <a-assets>
+        <a-asset-item
+          id="burguescalais"
+          src="https://cdn.glitch.me/5cd52e5d-a733-4718-b823-dfe7a6f1a9c9/auguste_rodin_die_burger_von_calais_188486.glb?v=1676399893625"
+        ></a-asset-item>
+        <img
+          id="burguescalaisfoto"
+          src="https://images-ext-1.discordapp.net/external/XmSpvswaHM499_zDaeEl4plY0n0BBjiR3RDOA0lPWNU/%3Fv%3D1714671479372/https/cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Imagen_prueba.png?format=webp&quality=lossless&width=900&height=676"
+          crossorigin="anonymous"
+        />
+        
+      </a-assets>
+
+      <!-- Modelo GLB en escena -->
+      
+      <a-entity
+        gltf-model="#burguescalais"
+        scale="0.0015 0.0015 0.0015"
+        position="22.941 0.400 0.603"
+        rotation="0 -180 0"
+      >
+        
+        <!-- Interfaz de información -->
+        
+        <a-entity
+          id="uiburguescalais"
+          rotation="0 90 0"
+          position="1084 887 -172"
+          scale="80 80 80"
+          info-panel
+        > <!-- "info-panel activa el código de JavaScript para detectar un click. Más detalles en script.js"
           
+          <!-- Gráfico de información -->
+          
+          <a-image
+            mixin="info"
+            src="#ptoinfo"
+            position="0 -3 0"
+          ></a-image>
+          
+          <!-- Panel desplegable -->
+          
+          <a-entity
+            visible="false"
+            geometry="primitive: plane; width: 12; height: 17"
+            material="color: #353130; shader: flat; transparent: false"
+            position="0 8 0"
+          >
+            
+            <!-- Imagen del panel -->
+            
+            <a-image
+              src="#burguescalaisfoto"
+              position="0 5 0.01"
+              width="10"
+              height="5"
+            ></a-image>
+            
+            <!-- Título del panel -->
+            
+            <a-entity
+              position="-6.15 0.5 0.001"
+              text="width: 22; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; value: Prueba"
+            ></a-entity>
+            
+            <!-- Texto del panel -->
+            
+            <a-entity
+              position="-6 -0.5 0.001"
+              text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; value:Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of \n\nLetraset sheets containing Lorem Ipsum passages"
+            ></a-entity>
+          </a-entity>
+        </a-entity>
+        
+      </a-entity>
 
 
-       <!--Musica Drum$Bass by Jose&Arkaitz-->
+      <!--Musica Drum$Bass by Jose&Arkaitz-->
+
+      <a-sound
+        src="https://cdn.glitch.global/5cd52e5d-a733-4718-b823-dfe7a6f1a9c9/2%20-%20Doser.mp3?v=1673975078456"
+        autoplay="false"
+        position="0 0 0"
+        loop="true"
+      ></a-sound>
+
       
-      
-  <a-sound src="https://cdn.glitch.global/5cd52e5d-a733-4718-b823-dfe7a6f1a9c9/2%20-%20Doser.mp3?v=1673975078456" autoplay="false" position="0 0 0" loop="true"></a-sound>
-
+      <!--Campanadas-->
       
       <a-sound
         src="https://cdn.glitch.global/8e8beb79-81de-401a-8591-38fa0f92dbb9/campanadas001.mp3?v=1679660295429"
         autoplay="false"
         position="0 0 0"
         loop="false"
-        volume= "1"
+        volume="1"
       ></a-sound>
-
-
-
-
-<!--Campanadas 
-      
-      <a-sound
-        src="https://cdn.glitch.global/8e8beb79-81de-401a-8591-38fa0f92dbb9/eldiadelabestiamusicaexport.mp3?v=1679661350843"
-        autoplay="true"
-        position="0 0 0"
-        loop="false"
-        volume="2"
-      ></a-sound>
-      
--->
-      
       
     </a-scene>
   </body>
-
 </html>
-
