@@ -4,7 +4,7 @@ AFRAME.registerComponent('info-panel', { // Se genera un componente personalizad
     this.infoPanel = this.el.children[1]; // El segundo hijo del padre que contenga info-panel se designa como infoPanel (panel de información)
     this.onInfoButtonClick = this.onInfoButtonClick.bind(this); 
 
-    this.infoButton.addEventListener('click', this.onInfoButtonClick) // Añadimos a infoButton la función onInfoButtonClick escrita debajo para que detecte los click.
+    this.infoButton.addEventListener('click', this.onInfoButtonClick) // Añadimos a infoButton la función onInfoButtonClick escrita en las siguientes 5 líneas para que detecte los click.
   },
 
   onInfoButtonClick: function () { // Asignamos a la función de detección de click el nombre de onInfoButtonClick
@@ -16,7 +16,7 @@ AFRAME.registerComponent('sound-button', { // Se genera un componente personaliz
   init: function () { // Se le otorgan funciones al componente
     this.infoSound = this.el.children[0]; // El primer hijo del padre que contenga sound-button se designa como infoSound (archivo de sonido)
     this.onSoundButtonClick = this.onSoundButtonClick.bind(this);
-    this.el.addEventListener('click', this.onSoundButtonClick) // Añadimos a infoSound la función onSoundButtonClick escrita debajo para que detecte los click.
+    this.el.addEventListener('click', this.onSoundButtonClick) // Añadimos a infoSound la función onSoundButtonClick escrita en las siguientes 5 líneas para que detecte los click.
   },
 
   onSoundButtonClick: function () {

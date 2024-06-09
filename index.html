@@ -20,10 +20,10 @@
     >
       <!--Entorno-->
       <a-sky
-        src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Cielo_Muvle.jpg?v=1715266526923"
+        src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/Cielo_Muvle.jpg?v=1717856776124"
       ></a-sky>
 
-      <!--Cámara y Logotipo MUVLE-->
+      <!--Controles de cámara-->
       <a-entity
         movement-controls="fly: false"
         position="-8.7 1.7 0"
@@ -85,7 +85,7 @@
         position="1.807 4.521 0.000"
       ></a-light>
 
-      <!--Expositores Alfar-->
+      <!--Peanas Alfar-->
       <a-box
         id="VitrinaNido"
         position="3.879 0.590 12.158"
@@ -136,11 +136,11 @@
         rotation="0 0 0"
       ></a-entity>
 
-      <!--Modelo 3D - Logotipo MUVLE-->
+      <!--Modelo 3D - Logotipo corpóreo MUVLE-->
       <a-assets>
         <a-asset-item
           id="logomuvle"
-          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/MUVLE3D.glb?v=1716220426294"
+          src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/MUVLE3D.glb?v=1717857199119"
         ></a-asset-item>
       </a-assets>
       <a-entity
@@ -151,7 +151,7 @@
         rotation="0 -90 0"
       ></a-entity>
 
-      <!--Botones Interacción - Imágenes-->
+      <!--Iconos Interfaz de Interacción-->
       <a-assets>
         <img
           id="ptoinfo"
@@ -163,11 +163,68 @@
           src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Icon_Audio.png?v=1716311068963"
           crossorigin="anonymous"
         />
-        <!--a-mixin lo utilizamos para almacenar propiedades en la entidad "info" y poder asignarlas al resto del puntos con la expresión mixin=info -->
+        <!--a-mixin almacena las propiedades en "info" que pueden asignarse en conjunto escribiendo "mixin=info" siempre que se utilicen los iconos-->
         <a-mixin id="info" geometry="height: 2; width: 2"></a-mixin>
       </a-assets>
 
-      <!--Assets del proyecto (imágenes, modelos 3D y audios)-->
+      <!--Paneles con instrucciones ubicados en la escena-->
+      <!--Imagen - Instrucciones 1-->
+      <img
+        id="instruc1"
+        src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/TXT_Expositivos_Desplazamiento.png?v=1717856887443"
+        crossorigin="anonymous"
+      />
+      <a-image
+        id="info1"
+        src="#instruc1"
+        position="-6.799 2.107 -1.760"
+        rotation="0 -70 0"
+        geometry="height: 2; width: 2"
+      ></a-image>
+
+      <!--Imagen - Instrucciones 2-->
+      <img
+        id="instruc2"
+        src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/TXT_Expositivos_Rotacion.png?v=1717856862783"
+        crossorigin="anonymous"
+      />
+      <a-image
+        id="info2"
+        src="#instruc2"
+        position="-6.799 2.107 1.760"
+        rotation="0 -120 0"
+        geometry="height: 2; width: 2"
+      ></a-image>
+
+      <!--Imagen - Instrucciones 3-->
+      <img
+        id="instruc3"
+        src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/TXT_Expositivos_Info.png?v=1717856890153"
+        crossorigin="anonymous"
+      />
+      <a-image
+        id="info3"
+        src="#instruc3"
+        position="6.336 2.331 4.6"
+        rotation="0 -135 0"
+        geometry="height: 2; width: 2"
+      ></a-image>
+
+      <!--Imagen - Instrucciones 4-->
+      <img
+        id="instruc4"
+        src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/TXT_Expositivos_Audio.png?v=1717856885502"
+        crossorigin="anonymous"
+      />
+      <a-image
+        id="info4"
+        src="#instruc4"
+        position="6.336 2.331 -4.6"
+        rotation="0 -45 0"
+        geometry="height: 2; width: 2"
+      ></a-image>
+
+      <!--Recursos del proyecto (imágenes, modelos 3D y audios)-->
       <a-assets>
         <!--Modelo Aluche-->
         <a-asset-item
@@ -219,64 +276,53 @@
           id="galochabrown"
           src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/GalochaBrownLow.glb?v=1716846384290"
         ></a-asset-item>
+        <!--Modelo 3D Señal Direccional 1-->
         <a-asset-item
           id="sen2"
-          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/senales_MUVLE2.glb?v=1716509356644"
+          src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/senales_MUVLE2.glb?v=1717857207704"
         ></a-asset-item>
+        <!--Modelo 3D Señal Direccional 2-->
         <a-asset-item
           id="sen1"
-          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/senales_MUVLE1.glb?v=1716509351344"
+          src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/senales_MUVLE1.glb?v=1717857205848"
         ></a-asset-item>
+        <!--Imagen - Texto explicativo Exposición Alfar-->
+        <img
+          id="txtexpoalfar"
+          src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/TXT_Expositivo_Alfar.png?v=1717856809397"
+          crossorigin="anonymous"
+        />
+        <!--Imagen - Texto explicativo Exposición Entre Tierras-->
+        <img
+          id="txtexpotierras"
+          src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/TXT_Expositivo_Entretierras.png?v=1717856840523"
+          crossorigin="anonymous"
+        />
+        <!--Imagen - Foto Hemina-->
         <img
           id="fotocereal"
           src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/CerealFoto_Low.jpg?v=1716846912595"
           crossorigin="anonymous"
         />
-        <img
-          id="txtexpoalfar"
-          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/TXT_Expositivo_Alfar.png?v=1716390098472"
-          crossorigin="anonymous"
-        />
-        <img
-          id="instruc1"
-          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/TXT_Expositivos_Desplazamiento.png?v=1716495477599"
-          crossorigin="anonymous"
-        />
-        <img
-          id="instruc2"
-          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/TXT_Expositivos_Rotacion.png?v=1716495518880"
-          crossorigin="anonymous"
-        />
-        <img
-          id="instruc3"
-          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/TXT_Expositivos_Info.png?v=1716495741879"
-          crossorigin="anonymous"
-        />
-        <img
-          id="instruc4"
-          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/TXT_Expositivos_Audio.png?v=1716495750027"
-          crossorigin="anonymous"
-        />
-        <img
-          id="txtexpotierras"
-          src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/TXT_Expositivo_Entretierras.png?v=1716398130404"
-          crossorigin="anonymous"
-        />
+        <!--Imagen - Foto Carros-->
         <img
           id="fotocarros"
           src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/FotoCarro_Low.jpg?v=1716847142708"
           crossorigin="anonymous"
         />
+        <!--Imagen - Foto Alfar-->
         <img
           id="fotoalfar"
           src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/FotoAlfar_Low.jpg?v=1716847210233"
           crossorigin="anonymous"
         />
+        <!--Imagen - Foto Nidos de barro-->
         <img
           id="nidofoto"
           src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Nidos_Foto.png?v=1716551806045"
           crossorigin="anonymous"
         />
+        <!--Imagen - Foto Palacio Episcopal de Astorga-->
         <img
           id="gaudifoto"
           src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Astorga_Foto.png?v=1716551798936"
@@ -284,37 +330,51 @@
         />
       </a-assets>
 
-      <!--Paneles con instrucciones ubicados en la escena-->
+      <!--Elementos ubicados en la escena 3D (Imágenes)-->
+      <!--Imagen de carros - Exposición Entre Tierras-->
       <a-image
-        id="info1"
-        src="#instruc1"
-        position="-6.799 2.107 -1.760"
-        rotation="0 -70 0"
+        id="imagencarros"
+        src="#fotocarros"
+        position="4.470 2.616 -12.91"
+        rotation="0 -90 0"
+        scale="1.2 1.2 1.2"
         geometry="height: 2; width: 2"
-      ></a-image>
+      >
+      </a-image>
+      <!--Imagen Mesa Alfarero - Exposición Alfar-->
       <a-image
-        id="info2"
-        src="#instruc2"
-        position="-6.799 2.107 1.760"
-        rotation="0 -120 0"
+        id="imagenalfar"
+        src="#fotoalfar"
+        position="-0.932 2.616 12.91"
+        rotation="0 90 0"
+        scale="1.2 1.2 1.2"
         geometry="height: 2; width: 2"
-      ></a-image>
-      <a-image
-        id="info3"
-        src="#instruc3"
-        position="6.336 2.331 4.6"
-        rotation="0 -135 0"
-        geometry="height: 2; width: 2"
-      ></a-image>
-      <a-image
-        id="info4"
-        src="#instruc4"
-        position="6.336 2.331 -4.6"
-        rotation="0 -45 0"
-        geometry="height: 2; width: 2"
-      ></a-image>
+      >
+      </a-image>
 
-      <!--Estatua - Modelo 3D y panel informativo-->
+      <!--Elementos ubicados en la escena 3D (Modelos 3D)-->
+      <!--Señal direccional 1 - Modelo 3D-->
+      <a-entity
+        id="senal1"
+        gltf-model="#sen1"
+        position="-3.284 1.870 -4.521"
+        rotation="0 45 0"
+        scale="10 10 1"
+      >
+      </a-entity>
+
+      <!--Señal direccional 2 - Modelo 3D-->
+      <a-entity
+        id="senal2"
+        gltf-model="#sen2"
+        position="-3.284 1.870 4.521"
+        rotation="0 135 0"
+        scale="10 10 1"
+      >
+      </a-entity>
+
+      <!--Elementos ubicados en la escena 3D (Modelos 3D)-->
+      <!--Estatua Aluche - Modelo 3D e interfaz-->
       <a-entity
         gltf-model="#estatualuche"
         scale="1.7 1.7 1.7"
@@ -323,7 +383,7 @@
       >
         <!--info-panel activa el código de JavaScript para detectar un click. Más detalles en script.js-->
         <a-entity id="uilucha" scale="0.5 0.5 0.5" info-panel>
-          <!--Botón de información (Icono)-->
+          <!--Botón de información en texto (Icono)-->
           <a-image
             mixin="info"
             src="#ptoinfo"
@@ -347,10 +407,11 @@
             <!--Texto del panel-->
             <a-entity
               position="-6 1.961 0.001"
-              text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value:La lucha leonesa o aluche es un deporte tradicional de la provincia leonesa. Se trata de una costumbre transmitida de forma oral hasta la actualidad, que se ha ido adaptando a las formas y convenciones del deporte moderno sin perder su propia esencia, convirtiendose en practica federada con competiciones regulares. Fue declarada Bien de Interes Cultural de caracter inmaterial el 29 de junio de 2017.\n\nEstatua de Aluche. Ciudad de Leon, escaneada in-situ"
+              text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value:La lucha leonesa o aluche es un deporte tradicional de la provincia leonesa. Se trata de una costumbre transmitida de forma oral hasta la actualidad, que se ha ido adaptando a las formas y convenciones del deporte moderno. Fue declarada Bien de Interes Cultural de caracter inmaterial el 29 de junio de 2017.\n\nEstatua de Aluche. Ciudad de Leon, escaneada in-situ"
             ></a-entity>
           </a-entity>
-          <!--Botón de información en mp3 (Icono)-->
+          <!--Botón de información en audio (Icono)-->
+          <!--"sound-button activa el código de JavaScript para detectar un click. Más detalles en script.js"-->
           <a-image
             mixin="info"
             src="#audioinfo"
@@ -358,9 +419,9 @@
             position="0.869 -1.334 0.714"
             scale="0.25 0.25 0.25"
           >
-            <!-- Botón de información en mp3 (Icono)-->
+            <!--Sonido-->
             <a-sound
-              src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Audio_Aluche.mp3?v=1715797304459"
+              src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/AudioAluche.mp3?v=1717854923108"
               autoplay="false"
               position="0 0 0"
               loop="false"
@@ -370,7 +431,7 @@
         </a-entity>
       </a-entity>
 
-      <!--Molde Gaudi - Modelo 3D y panel informativo-->
+      <!--Molde Gaudi - Modelo 3D e interfaz-->
       <a-entity
         id="gaudimolde"
         gltf-model="#moldegaudi"
@@ -378,44 +439,46 @@
         position="3.929 1.2 10.282"
         rotation="0 90 0"
       >
-        <!--"info-panel activa el código de JavaScript para detectar un click. Más detalles en script.js"-->
+        <!--info-panel activa el código de JavaScript para detectar un click. Más detalles en script.js-->
         <a-entity
           id="uimoldegaudi"
           rotation="0 180 0"
           scale="0.05 0.05 0.05"
           info-panel
         >
-          <!--Punto de información (su posición es dependiente de la del padre)-->
+          <!--Botón de información en texto (Icono)-->
           <a-image
             mixin="info"
             src="#ptoinfo"
             position="3.711 0.923 3.668"
           ></a-image>
-          <!-- Panel desplegable -->
+          <!--Panel desplegable-->
           <a-entity
             visible="false"
             geometry="primitive: plane; width: 12; height: 16"
             material="color: #353130; shader: flat; transparent: false"
             position="-4.363 9.859 -2.188"
           >
-            <!-- Imagen del panel -->
+            <!--Imagen del panel-->
             <a-image
               src="#gaudifoto"
               position="0 4.468 0.01"
               width="10"
               height="5"
             ></a-image>
-            <!-- Título del panel -->
+            <!--Título del panel-->
             <a-entity
               position="-6.15 0.97 0.001"
               text="width: 22; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Artesania moderna"
             ></a-entity>
-            <!-- Texto del panel -->
+            <!--Texto del panel-->
             <a-entity
               position="-6 -0.48 0.001"
               text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: El arquitecto Antonio Gaudi se sirvio de la alfareria tradicional de Jimenez de Jamuz para la decoracion de arcos de puertas y nervaduras de bovedas en la edificacion del Palacio Episcopal de Astorga. A partir de unos moldes hechos por el propio Gaudi, los alfareros fueron haciendo las piezas, decoradas con diversos motivos tradicionales. En 2002, para celebrar el 150 aniversario del nacimiento de Antonio Gaudi, el Alfar-Museo de Jimenez de Jamuz elaboro un reducido numero de piezas con estos moldes.\n\nPiezas cedidas por el Alfar-Museo\ny escaneadas in-situ. Fotografia de Wikimedia Commons, licencia CC BY-SA 4.0 DEED"
             ></a-entity>
           </a-entity>
+          <!--Botón de información en audio (Icono)-->
+          <!--sound-button activa el código de JavaScript para detectar un click. Más detalles en script.js-->
           <a-image
             mixin="info"
             src="#audioinfo"
@@ -423,16 +486,18 @@
             position="3.711 2.923 3.668"
             scale="1 1 1"
           >
+            <!--Sonido-->
             <a-sound
-              src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Audio_Aluche.mp3?v=1715797304459"
+              src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/AudioGaudi.mp3?v=1717848962214"
               autoplay="false"
               position="0 0 0"
               loop="false"
-              volume="5"
+              volume="2"
             ></a-sound>
           </a-image>
         </a-entity>
       </a-entity>
+      <!--Torre de piezas Gaudí - Modelo 3D emparentado-->
       <a-entity
         gltf-model="#torregaudi"
         scale="1.5 1.5 1.5"
@@ -441,7 +506,7 @@
       >
       </a-entity>
 
-      <!--Nido - Modelo 3D y panel informativo-->
+      <!--Nido de Barro - Modelo 3D e interfaz-->
       <a-entity
         id="nido"
         gltf-model="#nidobarro"
@@ -449,44 +514,46 @@
         position="3.832 1.45 12.145"
         rotation="0 0 0"
       >
-        <!--"info-panel activa el código de JavaScript para detectar un click. Más detalles en script.js"-->
+        <!--info-panel activa el código de JavaScript para detectar un click. Más detalles en script.js-->
         <a-entity
           id="uinido"
           rotation="0 -90 0"
           scale="0.05 0.05 0.05"
           info-panel
         >
-          <!--Punto de información (su posición es dependiente de la del padre)-->
+          <!--Botón de información en texto (Icono)-->
           <a-image
             mixin="info"
             src="#ptoinfo"
             position="3.711 -1.364 2.318"
           ></a-image>
-          <!-- Panel desplegable -->
+          <!--Panel desplegable-->
           <a-entity
             visible="false"
             geometry="primitive: plane; width: 12; height: 15"
             material="color: #353130; shader: flat; transparent: false"
             position="-2.279 7.6 -2.188"
           >
-            <!-- Imagen del panel -->
+            <!--Imagen del panel-->
             <a-image
               src="#nidofoto"
               position="0 4 0.01"
               width="10"
               height="5"
             ></a-image>
-            <!-- Título del panel -->
+            <!--Título del panel-->
             <a-entity
               position="-6.15 0.5 0.001"
               text="width: 22; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Nidos de barro"
             ></a-entity>
-            <!-- Texto del panel -->
+            <!--Texto del panel-->
             <a-entity
               position="-6 -0.875 0.001"
-              text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Durante el confinamiento en la pandemia del COVID-19, se utilizo como base la tradicion alfarera para desarrollar unas vasijas en el Alfar-Museo que funcionaran como nido para la proteccion de las aves, favoreciendo asi su cria y conservacion. Se trata de un ejemplo de I+D en el que se perpetua el hacer artesano y los materiales tradicionales propios de la zona: la arcilla o barro rojo.\n\nPieza cedida por el Alfar-Museo y escaneada in-situ. Fotografia cedida por el Alfar-Museo."
+              text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Durante el confinamiento en la pandemia del COVID-19, se desarrollaron unas vasijas en el Alfar-Museo para la proteccion de las aves, favoreciendo así su craa y conservacion.  Utilizando como base la tradicion alfarera, se trata de un ejemplo de I+D en el que se perpetua el hacer artesano y los materiales tradicionales propios de la zona: la arcilla o barro rojo.\n\nPieza cedida por el Alfar-Museo y escaneada in-situ. Fotografia cedida por el Alfar-Museo."
             ></a-entity>
           </a-entity>
+          <!--Botón de información en audio (Icono)-->
+          <!--sound-button activa el código de JavaScript para detectar un click. Más detalles en script.js-->
           <a-image
             mixin="info"
             src="#audioinfo"
@@ -494,18 +561,19 @@
             position="3.711 0.936 2.318"
             scale="1 1 1"
           >
+            <!--Sonido-->
             <a-sound
-              src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Audio_Aluche.mp3?v=1715797304459"
+              src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/AudioNido.mp3?v=1717849136074"
               autoplay="false"
               position="0 0 0"
               loop="false"
-              volume="5"
+              volume="2"
             ></a-sound>
           </a-image>
         </a-entity>
       </a-entity>
 
-      <!--Orza-Modelo 3D y panel informativo-->
+      <!--Orza - Modelo 3D e interfaz-->
       <a-entity
         id="Orza"
         gltf-model="#orza"
@@ -520,13 +588,13 @@
           scale="0.05 0.05 0.05"
           info-panel
         >
-          <!--Punto de información (su posición es dependiente de la del padre)-->
+          <!--Botón de información en texto (Icono)-->
           <a-image
             mixin="info"
             src="#ptoinfo"
             position="4.547 -1.364 2.318"
           ></a-image>
-          <!-- Panel desplegable -->
+          <!--Panel desplegable-->
           <a-entity
             visible="false"
             geometry="primitive: plane; width: 12; height: 8"
@@ -534,17 +602,19 @@
             position="10.549 2.895 6.956"
             rotation="0 -45 0"
           >
-            <!-- Título del panel -->
+            <!--Título del panel-->
             <a-entity
               position="-6.15 2.931 0.001"
               text="width: 22; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Orza de barro"
             ></a-entity>
-            <!-- Texto del panel -->
+            <!--Texto del panel-->
             <a-entity
               position="-6 1.316 0.001"
-              text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Jimenez de Jamuz ha sido y es el nucleo alfarero mas importante en la provincia leonesa. No se conoce exactamente cuando se inicia la alfareria jiminiega, pero se apunta a que gentes morisca, antes de su expulsion en 1610 por orden de Felipe III, habian dejado en estas tierras las primeras muestras del oficio del alfarero.\n\nPieza cedida por un particular y escaneada in-situ"
+              text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Jimenez de Jamuz ha sido y es el nucleo alfarero mas importante en la provincia leonesa. No se conoce exactamente cuando se inicia la alfareria jiminiega, pero se apunta a que gentes moriscas, antes de su expulsion en 1610 por orden de Felipe III, habian dejado en estas tierras las primeras muestras del oficio del alfarero.\n\nPieza cedida por un particular y escaneada in-situ"
             ></a-entity>
           </a-entity>
+          <!--Botón de información en audio (Icono)-->
+          <!--sound-button activa el código de JavaScript para detectar un click. Más detalles en script.js-->
           <a-image
             mixin="info"
             src="#audioinfo"
@@ -552,17 +622,19 @@
             position="4.547 0.926 2.318"
             scale="1 1 1"
           >
+            <!--Sonido-->
             <a-sound
-              src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Audio_Aluche.mp3?v=1715797304459"
+              src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/AudioOrza.mp3?v=1717849564795"
               autoplay="false"
               position="0 0 0"
               loop="false"
-              volume="5"
+              volume="2"
             ></a-sound
           ></a-image>
         </a-entity>
       </a-entity>
 
+      <!--Galochas Negras - Modelo 3D e interfaz-->
       <a-entity
         id="Galochas"
         gltf-model="#galochablack"
@@ -578,14 +650,14 @@
           position="0.010 0.252 0.135"
           info-panel
         >
-          <!--Punto de información (su posición es dependiente de la del padre)-->
+          <!--Botón de información en texto (Icono)-->
           <a-image
             mixin="info"
             src="#ptoinfo"
             scale="1.5 1.5 1.5"
             position="4.547 -1.364 2.318"
           ></a-image>
-          <!-- Panel desplegable -->
+          <!--Panel desplegable-->
           <a-entity
             visible="false"
             geometry="primitive: plane; width: 12; height: 11"
@@ -594,17 +666,19 @@
             rotation="0 0 0"
             scale="2 2 2"
           >
-            <!-- Título del panel -->
+            <!--Título del panel-->
             <a-entity
               position="-6.15 4.019 0.001"
               text="width: 22; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Galochas"
             ></a-entity>
-            <!-- Texto del panel -->
+            <!--Texto del panel-->
             <a-entity
               position="-6 2.297 0.001"
               text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: El calzado de madera era el zapato habitual del campesino, especialmente en el norte peninsular. Dependiendo de la zona recibe un nombre u otro, por lo que se utilizan palabras como zueco, galocha o albarca para denominar el mismo objeto.\n\nLo utilizaban indistintamente hombres y mujeres. Era habitual ponerlo al salir de casa, para andar por la calle y evitar que el pie estuviera en contacto con el suelo mojado, embarrado o nevado.\n\nPiezas cedidas por un particular y escaneada in-situ"
             ></a-entity>
           </a-entity>
+          <!--Botón de información en audio (Icono)-->
+          <!--sound-button activa el código de JavaScript para detectar un click. Más detalles en script.js-->
           <a-image
             mixin="info"
             src="#audioinfo"
@@ -612,15 +686,17 @@
             scale="1.5 1.5 1.5"
             position="4.547 2.115 2.318"
           >
+            <!--Sonido-->
             <a-sound
-              src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Audio_Aluche.mp3?v=1715797304459"
+              src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/AudioGalochas.mp3?v=1717854568018"
               autoplay="false"
               position="0 0 0"
               loop="false"
-              volume="5"
+              volume="2"
             ></a-sound
           ></a-image>
         </a-entity>
+        <!--Galochas Marrones - Modelo 3D emparentado-->
         <a-entity
           gltf-model="#galochabrown"
           scale="2 2 2"
@@ -630,6 +706,7 @@
         </a-entity>
       </a-entity>
 
+      <!--Hemina - Modelo 3D e interfaz-->
       <a-entity
         id="cajamedida"
         gltf-model="#medida"
@@ -644,14 +721,14 @@
           scale="0.075 0.075 0.075"
           info-panel
         >
-          <!--Punto de información (su posición es dependiente de la del padre)-->
+          <!--Botón de información en texto (Icono)-->
           <a-image
             mixin="info"
             src="#ptoinfo"
             rotation="0 0 0"
             position="-8.500 -1.364 2.318"
           ></a-image>
-          <!-- Panel desplegable -->
+          <!--Panel desplegable-->
           <a-entity
             visible="false"
             geometry="primitive: plane; width: 12; height: 15"
@@ -660,24 +737,26 @@
             rotation="0 0 0"
             scale="1.3 1.3 1.3"
           >
-            <!-- Imagen del panel -->
+            <!--Imagen del panel-->
             <a-image
               src="#fotocereal"
               position="0 3.248 0.01"
               width="9.8"
               height="5.76"
             ></a-image>
-            <!-- Título del panel -->
+            <!--Título del panel-->
             <a-entity
               position="-6.15 -1.066 0.001"
               text="width: 22; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Hemina"
             ></a-entity>
-            <!-- Texto del panel -->
+            <!--Texto del panel-->
             <a-entity
               position="-6 -2.370 0.001"
               text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: La hemina o emina es una antigua medida de volumen usada tradicionalmente en la provincia leonesa para medir el volumen de trigo. Para ello, se creaban este tipo de recipientes que se utilizaban a modo de pala para llenarlos de trigo y calcular cuantas heminas se habian cosechado.\n\nPieza cedida por un particular y escaneada in-situ. Fotografia cedida por particular."
             ></a-entity>
           </a-entity>
+          <!--Botón de información en audio (Icono)-->
+          <!--sound-button activa el código de JavaScript para detectar un click. Más detalles en script.js-->
           <a-image
             mixin="info"
             src="#audioinfo"
@@ -686,8 +765,9 @@
             position="-8.500 0.926 2.318"
             scale="1 1 1"
           >
+            <!--Sonido-->
             <a-sound
-              src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Audio_Aluche.mp3?v=1715797304459"
+              src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/AudioHemina.mp3?v=1717854677039"
               autoplay="false"
               position="0 0 0"
               loop="false"
@@ -697,6 +777,7 @@
         </a-entity>
       </a-entity>
 
+      <!--Texto introductorio Exposición Alfar - Imagen e interfaz-->
       <a-image
         id="txtalfar"
         src="#txtexpoalfar"
@@ -705,6 +786,8 @@
         scale="1.2 1.2 1.2"
         geometry="height: 2; width: 2"
       >
+        <!--Botón de información en audio (Icono)-->
+        <!--sound-button activa el código de JavaScript para detectar un click. Más detalles en script.js-->
         <a-image
           mixin="info"
           src="#audioinfo"
@@ -712,16 +795,18 @@
           position="-1.217 0.117 0.063"
           scale="0.15 0.15 0.15"
         >
+          <!--Sonido-->
           <a-sound
-            src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Audio_Aluche.mp3?v=1715797304459"
+            src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/AudioAlfar.mp3?v=1717849701495"
             autoplay="false"
             position="0 0 0"
             loop="false"
-            volume="5"
+            volume="2"
           ></a-sound>
         </a-image>
       </a-image>
 
+      <!--Texto introductorio Exposición Entre tierras - Imagen e interfaz-->
       <a-image
         id="txtentretierras"
         src="#txtexpotierras"
@@ -730,6 +815,8 @@
         scale="1.2 1.2 1.2"
         geometry="height: 2; width: 2"
       >
+        <!--Botón de información en audio (Icono)-->
+        <!--sound-button activa el código de JavaScript para detectar un click. Más detalles en script.js-->
         <a-image
           mixin="info"
           src="#audioinfo"
@@ -737,54 +824,18 @@
           position="-1.217 0.117 0.063"
           scale="0.15 0.15 0.15"
         >
+          <!--Sonido-->
           <a-sound
-            src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Audio_Aluche.mp3?v=1715797304459"
+            src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/AudioEntreTierras.mp3?v=1717849873215"
             autoplay="false"
             position="0 0 0"
             loop="false"
-            volume="5"
+            volume="2"
           ></a-sound>
         </a-image>
       </a-image>
 
-      <a-image
-        id="imagencarros"
-        src="#fotocarros"
-        position="4.470 2.616 -12.91"
-        rotation="0 -90 0"
-        scale="1.2 1.2 1.2"
-        geometry="height: 2; width: 2"
-      >
-      </a-image>
-
-      <a-image
-        id="imagenalfar"
-        src="#fotoalfar"
-        position="-0.932 2.616 12.91"
-        rotation="0 90 0"
-        scale="1.2 1.2 1.2"
-        geometry="height: 2; width: 2"
-      >
-      </a-image>
-
-      <a-entity
-        id="senal1"
-        gltf-model="#sen1"
-        position="-3.284 1.870 -4.521"
-        rotation="0 45 0"
-        scale="10 10 1"
-      >
-      </a-entity>
-
-      <a-entity
-        id="senal2"
-        gltf-model="#sen2"
-        position="-3.284 1.870 4.521"
-        rotation="0 135 0"
-        scale="10 10 1"
-      >
-      </a-entity>
-
+      <!--Yugo Sencillo - Modelo 3D e interfaz-->
       <a-entity
         gltf-model="#yugo1"
         scale="2.7 2.7 2.7"
@@ -799,14 +850,14 @@
           scale="0.05 0.05 0.05"
           info-panel
         >
-          <!--Punto de información (su posición es dependiente de la del padre)-->
+          <!--Botón de información en texto (Icono)-->
           <a-image
             mixin="info"
             src="#ptoinfo"
             rotation="0 60 0"
             position="-13.295 -4.334 10.623"
           ></a-image>
-          <!-- Panel desplegable -->
+          <!--Panel desplegable-->
           <a-entity
             visible="false"
             geometry="primitive: plane; width: 12; height: 9"
@@ -814,17 +865,19 @@
             position="-2.921 -0.275 4.945"
             rotation="0 12 0"
           >
-            <!-- Título del panel -->
+            <!--Título del panel-->
             <a-entity
               position="-6.15 2.931 0.001"
               text="width: 22; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Yugos"
             ></a-entity>
-            <!-- Texto del panel -->
+            <!--Texto del panel-->
             <a-entity
               position="-6 1.704 0.001"
               text="width: 10; x-offset: 1; baseline: top; align: left; shader: msdf; color: #ED7D5A; anchor: left; font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: Un yugo es un artefacto de madera al cual, formando yunta, se unen las mulas o los bueyes y en el que va sujeta la lanza del carro, el timon del arado u otros instrumentos de traccion animal. Debido al pasado ganadero y agricola de la provincia leonesa, casi todas las casas hoy en dia albergan uno de ellos como recuerdo de epocas pasadas.\n\nPiezas cedidas por un particular y escaneadas in-situ"
             ></a-entity>
           </a-entity>
+          <!--Botón de información en audio (Icono)-->
+          <!--sound-button activa el código de JavaScript para detectar un click. Más detalles en script.js-->
           <a-image
             mixin="info"
             src="#audioinfo"
@@ -833,15 +886,17 @@
             position="-13.295 -1.924 10.623"
             scale="1 1 1"
           >
+            <!--Sonido-->
             <a-sound
-              src="https://cdn.glitch.global/e765e821-3255-484e-b158-45c793c35599/Audio_Aluche.mp3?v=1715797304459"
+              src="https://cdn.glitch.global/be6791f9-3639-418b-9c27-414bdf510458/AudioYugo.mp3?v=1717854434568"
               autoplay="false"
               position="0 0 0"
               loop="false"
-              volume="5"
+              volume="2"
             ></a-sound
           ></a-image>
         </a-entity>
+        <!--Yugo Doble - Modelo 3D emparentado-->
         <a-entity
           gltf-model="#yugo2"
           scale="0.125 0.125 0.125"
